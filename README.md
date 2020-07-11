@@ -73,4 +73,13 @@ delete `./Aconfig`
   
 이를 해결하기 위한게 linter이다.  
 
-python 확장이 설치되었으면 자동으로 pylint 경고창이 뜰텐데, 만약 뜨지않거나 다른 pylint를 사용하고싶다면 setting.json를 아래와 같이 수정
+python 확장이 설치되었으면 자동으로 pylint 경고창이 뜰텐데, 만약 뜨지않거나 다른 pylint를 사용하고싶다면 setting.json를 아래와 같이 수정한다.  
+  
+```json
+{
+    "python.pythonPath": "/home/wonillism/.local/share/virtualenvs/clone_airbnb-l_EnjvOx/bin/python",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true
+}
+```  
+
