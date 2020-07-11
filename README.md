@@ -88,3 +88,9 @@ python 확장이 설치되었으면 자동으로 pylint 경고창이 뜰텐데, 
 formater도 설치해준다.
 
 `pipenv install black --dev --pre`
+
+## 2. Django
+
+### ./config/**init**.py
+
+이 파일은 django에 필요하다기보단 python에 필요한 파일이다. 새로운 폴더를 만들어 그 폴더의 파일을 사용할 때 항상 있어야하는 파일이다. 폴더를 패키지처럼 import 시켜서 사용할 수 있게 하는 역할을 한다.
