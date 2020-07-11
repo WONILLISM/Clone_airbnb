@@ -1,6 +1,6 @@
 # 에어비엔비 클론 코딩
 > 개발 환경 :  visual studio code  
-  기술 스택 : python(3.6.9), django, javascript, html, css  
+  기술 스택 : Python(3.6.9), Django(2.2.5), Tailwind, html, javascript
   개발 기간 : 2020-07-11 ~  
   
 
@@ -40,17 +40,37 @@ requirements.txt라는 파일을 통해 통으로 패키지들을 관리할 수 
   
 `sudo pip install pipenv`  
 
-## 프로젝트 생성  
+### 가상환경 생성  
   
-`pipenv --three`  (python3의 pipenv 프로젝트 생성)  
+`pipenv --three`  (python3의 pipenv 가상환경 생성)  
   
 `pipenv shell` (가상환경 실행)  
   
-## Django 2.2.5 설치  
+### Django 2.2.5 설치  
   
 `pipenv install Django==2.2.5`  
+
+
+## setting
+
+`dango-admin startproject config`   
   
+만약 wsl 환경이라면 vscode를 종료하고 linux 명령어로 실행해야함.  
 
+`./config` rename `./Aconfig`    
 
-
+`./Aconfig/config/` and `./Aconfig/manage.py` move `./`    
   
+delete `./Aconfig`  
+  
+### vscode  
+  
+**하단부 python 설정을 pipenv가 적용된 python으로 바꿔주어야함**  
+  
+**linter 확장 설치**  
+  
+파이썬은 compiled 언어가 아니라 runtime 언어이다. 컴파일 언어는 컴파일러가 있어서 프로그램이 시작되기 전에 에러를 잡아준다.  
+  
+이를 해결하기 위한게 linter이다.  
+
+python 확장이 설치되었으면 자동으로 pylint 경고창이 뜰텐데, 만약 뜨지않거나 다른 pylint를 사용하고싶다면 setting.json를 아래와 같이 수정
