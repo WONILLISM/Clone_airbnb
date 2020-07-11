@@ -38,7 +38,19 @@ requirements.txt라는 파일을 통해 통으로 패키지들을 관리할 수 
 
 ### pipenv 설치  
   
-`sudo pip install pipenv'  
+`sudo pip install pipenv`  
+
+## 프로젝트 생성  
+  
+`pipenv --three`  (python3의 pipenv 프로젝트 생성)  
+  
+`pipenv shell` (가상환경 실행)  
+  
+## Django 2.2.5 설치  
+  
+`pipenv install Django==2.2.5`  
+  
+
 
 
   
