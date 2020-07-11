@@ -5,9 +5,13 @@ verify_ssl = true
 
 [dev-packages]
 flake8 = "*"
+black = "*"
 
 [packages]
 django = "==2.2.13"
 
 [requires]
 python_version = "3.6"
+
+[pipenv]
+allow_prereleases = true
