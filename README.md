@@ -94,3 +94,81 @@ formater도 설치해준다.
 ### ./config/**init**.py
 
 이 파일은 django에 필요하다기보단 python에 필요한 파일이다. 새로운 폴더를 만들어 그 폴더의 파일을 사용할 때 항상 있어야하는 파일이다. 폴더를 패키지처럼 import 시켜서 사용할 수 있게 하는 역할을 한다.
+
+### Django app 생성
+
+`django-admin startapp rooms`
+
+`django-admin startapp users`
+
+`django-admin startapp reviews`
+
+`django-admin startapp lists`
+
+`django-admin startapp reservations`
+
+## User app
+
+장고에서 기존에 주어진 user를 커스텀 해서 이용
+
+[Django Docs](https://docs.djangoproject.com/en/3.0/topics/auth/customizing/)
+
+`./config/settings.py`
+
+```python
+
+...
+
+# Application definition
+
+## Default django apps
+DJANGO_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+]
+
+## Customized apps
+PROJECT_APPS = [
+    "users.apps.UsersConfig",
+]
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
+
+...
+
+AUTH_USER_MODEL = 'users.User"
+
+```
+
+`./users/models.py`
+
+```python
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+
+
+class User(AbstractUser):
+    pass
+```
+
+`./users/admin.py`
+
+```python
+from django.contrib import admin
+from . import models
+
+
+@admin.register(models.User)
+class CustomUserAdmin(admin.ModelAdmin):
+    pass
+
+```
+
+`python manage.py createsuperuser`
+
+`python manage.py makemigrations`
+
+`python manage.py migrate`
