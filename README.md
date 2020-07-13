@@ -172,3 +172,94 @@ class CustomUserAdmin(admin.ModelAdmin):
 `python manage.py makemigrations`
 
 `python manage.py migrate`
+
+### Set users model
+
+ImageField를 사용하기 위해 Pillow 설치
+
+`pipenv install Pillow`
+
+`models.py`
+
+```python
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+
+
+class User(AbstractUser):
+
+    """ Custom User Model """
+
+    GENDER_MALE = "male"
+    GENDER_FEMALE = "female"
+    GENDER_OTHER = "other"
+
+    GENDER_CHOICES = (
+        (GENDER_MALE, "Male"),
+        (GENDER_FEMALE, "Female"),
+        (GENDER_OTHER, "Other"),
+    )
+
+    LANGUAGE_ENGLISH = "en"
+    LANGUAGE_KOREAN = "kr"
+
+    LANGUAGE_CHOICES = (
+        (LANGUAGE_ENGLISH, "English"),
+        (LANGUAGE_KOREAN, "Korean"),
+    )
+
+    CURRENCY_USD = "usd"
+    CURRENCY_KRW = "krw"
+
+    CURRENCY_CHOICES = (
+        (CURRENCY_USD, "USD"),
+        (CURRENCY_KRW, "KRW"),
+    )
+
+    avatar = models.ImageField(null=True, blank=True)
+    gender = models.CharField(
+        choices=GENDER_CHOICES, max_length=10, null=True, blank=True
+    )
+    bio = models.TextField(default="")
+    birthdate = models.DateField(null=True)
+    language = models.CharField(
+        choices=LANGUAGE_CHOICES, max_length=2, null=True, blank=True,
+    )
+    currency = models.CharField(
+        choices=CURRENCY_CHOICES, max_length=3, null=True, blank=True,
+    )
+    superhost = models.BooleanField(default=False)
+
+```
+
+`python manage.py makemigration`  
+`python manage.py migrate`
+
+### user 정보를 list로 보여주기, filter 사용하기
+
+```python
+from django.contrib import admin
+from . import models
+
+# decorator 방식
+# admin 패널에서 User를 보고싶다, User를 컨트롤할 클래스가 아래의 클래스다.
+@admin.register(models.User)
+class CustomUserAdmin(admin.ModelAdmin):
+
+    """ Custom User Adimin """
+
+    list_display = (
+        "username",
+        "gender",
+        "currency",
+        "language",
+        "superhost",
+    )
+    list_filter = (
+        "language",
+        "superhost",
+        "currency",
+    )
+
+
+```
