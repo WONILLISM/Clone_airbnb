@@ -90,7 +90,10 @@ formater도 설치해준다.
 
 `pipenv install black --dev --pre`
 
-## 2. Django
+</details>
+  
+<details>
+<summary><h1>2. Django</h1></summary>
 
 ### ./config/**init**.py
 
@@ -108,9 +111,10 @@ formater도 설치해준다.
 
 `django-admin startapp reservations`
 
-</details>
-
-## User app
+</details>  
+  
+<details>
+<summary><h1>3. User app</h1></summary>
 
 장고에서 기존에 주어진 user를 커스텀 해서 이용
 
@@ -304,3 +308,5 @@ class CustomUserAdmin(UserAdmin):
 
 
 ```
+
+</details>
