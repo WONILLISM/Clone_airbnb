@@ -4,8 +4,10 @@
 >  기술 스택 : Python(3.6.9), Django(2.2.5), Tailwind, html, javascript
 > 개발 기간 : 2020-07-11 ~
 
+## 1. Environment setup
+
 <details>
-<h1><summary>1. Environment setup</summary></h1>
+<summary></summary>
 
 pipenv (npm + package.json과 같은 역할)
 
@@ -92,8 +94,10 @@ formater도 설치해준다.
 
 </details>
   
-<details>
-<summary><h1>2. Django</h1></summary>
+# 2. Django
+
+<details>  
+<summary></summary>
 
 ### ./config/**init**.py
 
@@ -113,8 +117,10 @@ formater도 설치해준다.
 
 </details>  
   
+# 3. User app
+
 <details>
-<summary><h1>3. User app</h1></summary>
+<summary></summary>
 
 장고에서 기존에 주어진 user를 커스텀 해서 이용
 
