@@ -5,7 +5,7 @@
 > 개발 기간 : 2020-07-11 ~
 
 <details>
-<summary><h1>1. Environment setup</h1>
+<summary><h1>1. Environment setup</h1></summary>
 
 pipenv (npm + package.json과 같은 역할)
 
@@ -108,7 +108,7 @@ formater도 설치해준다.
 
 `django-admin startapp reservations`
 
-</summary>
+</details>
 
 ## User app
 
