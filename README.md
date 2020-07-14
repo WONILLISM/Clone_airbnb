@@ -5,7 +5,7 @@
 > 개발 기간 : 2020-07-11 ~
 
 <details>
-<summary><h1>1. Environment setup</h1></summary>
+<summary><h1>1. Environment setup</h1>
 
 pipenv (npm + package.json과 같은 역할)
 
