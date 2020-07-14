@@ -4,7 +4,7 @@
 >  기술 스택 : Python(3.6.9), Django(2.2.5), Tailwind, html, javascript
 > 개발 기간 : 2020-07-11 ~
 
-## 1. Environment setup
+# 1. Environment setup
 
 <details>
 <summary></summary>
