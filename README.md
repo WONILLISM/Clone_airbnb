@@ -330,7 +330,9 @@ class CustomUserAdmin(UserAdmin):
 여러 모델에 사용될 TimeStampedModel은 abstract 처리  
   
 `./core/models.py`  
-```python  
+
+
+```python
 from django.db import models
 
 class TimeStampedModel(models.Model):
@@ -343,7 +345,7 @@ class TimeStampedModel(models.Model):
     class Meta:
         abstract = True
 
-````
+```
 
 국가 정보를 이용하기 위한 라이브러리 사용
 
@@ -351,11 +353,11 @@ class TimeStampedModel(models.Model):
 `pipenv install django-countries`
 
 Tip.
+
 1. python 관련 import
 2. django와 관련된 것들을 모두 import
 3. 외부 패키지 import
 4. 내가 만든 패키지 import
-
 
 DateTimeField의 `auto_now_add = True`는 Model을 저장할 때마다 자동으로 현제 날짜를 등록한다.
 
@@ -364,17 +366,17 @@ Foreignkey는 한 모델을 다른 모델과 연결시켜주는 역할을 함.
 
 [Djaong docs](https://docs.djangoproject.com/en/3.0/topics/db/models/)
 
-
 Model 클래스(table)이 반환값이 클래스 이름이 아닌 입력된 name값으로 반환하기
+
 ```python
+
 class ClassName:
-    name = ...
+    name = # ...
 
 
 def __str__(self):
       return self.name
 
-````
+```
 
 </details>
-```
