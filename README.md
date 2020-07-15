@@ -319,7 +319,7 @@ class CustomUserAdmin(UserAdmin):
 
 </details>
   
-# 4. Romm app
+# 4. Room app
 
 <details>
 <summary></summary>
@@ -329,8 +329,7 @@ class CustomUserAdmin(UserAdmin):
   
 여러 모델에 사용될 TimeStampedModel은 abstract 처리  
   
-`./core/models.py`  
-
+`./core/models.py`
 
 ```python
 from django.db import models
@@ -378,5 +377,24 @@ def __str__(self):
       return self.name
 
 ```
+
+### on delete = CASCADE
+
+데이터베이스에서 쓰이는 내용이다.  
+다른 테이블의 키를 FK로 갖고 있을 때 즉, 다른 테이블과 연결되어있을때 그 테이블이 삭제된다면 연결된 테이블도 같이 삭제된다. 참조무결성 유지.  
+(폭포수 효과)
+
+### on delete SET_NULL
+
+부모테이블에서 primary 값이 삭제될 경우 하위테이블의 reference값은 존재할 수 없다. 옵션이 없을 경우는 에러가 발생하고 옵션 SET NULL 로 정의되면 하위테이블의 reference값이 NULL 값으로 변경되면서 참조무결성을 유지한다.
+
+### verbose_name
+
+장고는 작성한 모델의 이름에 s를 자동으로 붙여준다. 하지만 Facility같은경우는 Facilitys 가 아닌 Facilities가 되어야한다.  
+이를 해결하기위해 meta 클래스를 불러와 직접 지정해주자.
+
+### Foreign Key를 생성하는 방법
+
+클래스 모델 명을 그대로 써도 되지만, ""를 이용해서 string으로 바꾸어 사용하면 장고가 그 클래스가 어딨는지 알아서 찾아준다. 클래스를 많이 정의해야할 때 유용하다.
 
 </details>
