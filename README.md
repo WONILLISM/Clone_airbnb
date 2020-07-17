@@ -404,11 +404,13 @@ def __str__(self):
 <details>
 <summary></summary>  
   
-## Review Model
+## Review Model  
+  
 [`./reviews/models.py`](./reviews/models.py)  
 [`./reviews/admin.py`](./reviews/admin.py)  
   
 ## Reservation Model  
+  
 [`./reservations/models.py`](./reservations/models.py)  
 [`./reservations/admin.py`](./reservations/admin.py)
 
@@ -416,5 +418,10 @@ def __str__(self):
 
 [`./lists/models.py`](./lists/models.py)  
 [`./lists/admin.py`](./lists/admin.py)
+
+## Conversation Model
+
+[`./conversations/models.py`](./conversations/models.py)  
+[`./conversations/admin.py`](./conversations/admin.py)
 
 </details>
