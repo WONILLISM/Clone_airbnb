@@ -434,7 +434,7 @@ def __str__(self):
 
 </details>
   
-# 6. ROOM ADMIN
+# 6. Room Admin
 
 <details>
 <summary></summary>
@@ -443,5 +443,24 @@ def __str__(self):
 
 `"classes":("collapse",),`은 `fieldsets`의 항목들을 접었다 폈다 할 수 있다.  
 [commit](https://github.com/WONILLISM/Clone_airbnb/commit/cddb0a3aa7e1ec70749c8143b3e8aff338243808)
+
+</details>
+  
+# 7. Models and Querysets
+
+<details>
+<summary></summary>
+
+queryset을 이용하여 오브젝트의 수 카운트 하기
+
+```python
+def count_amenities(self, obj):
+        return obj.amenities.count()
+```
+
+진행중인 프로젝트와 파이썬과 연결하기  
+`python manage.py shell`
+
+[Django queryset api reference](https://docs.djangoproject.com/en/3.0/ref/models/querysets/)
 
 </details>

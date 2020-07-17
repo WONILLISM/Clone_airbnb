@@ -69,9 +69,8 @@ class RoomAdmin(admin.ModelAdmin):
     )
 
     def count_amenities(self, obj):
-        return "potato"
-
-    count_amenities.short_description = "Sexy!!"
+        print(obj)
+        return obj.amenities.count()
 
 
 @admin.register(models.Photo)
