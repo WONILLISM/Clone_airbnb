@@ -441,6 +441,7 @@ def __str__(self):
 
 `fiter_horizontal`는 many to many 관계에서 작동한다.
 
-`"classes":("collapse",),`은 `fieldsets`의 항목들을 접었다 폈다 할 수 있다.
+`"classes":("collapse",),`은 `fieldsets`의 항목들을 접었다 폈다 할 수 있다.  
+[commit](https://github.com/WONILLISM/Clone_airbnb/commit/cddb0a3aa7e1ec70749c8143b3e8aff338243808)
 
 </details>
