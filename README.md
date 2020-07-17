@@ -398,3 +398,13 @@ def __str__(self):
 클래스 모델 명을 그대로 써도 되지만, ""를 이용해서 string으로 바꾸어 사용하면 장고가 그 클래스가 어딨는지 알아서 찾아준다. 클래스를 많이 정의해야할 때 유용하다.
 
 </details>
+  
+# 5. ALL OTHER APPS
+
+<details>
+<summary></summary>  
+  
+## Review Model
+[`./reviews/models.py`](./reviews/models.py)  
+[`./reviews/admin.py`](./reviews/admin.py)  
+</details>
