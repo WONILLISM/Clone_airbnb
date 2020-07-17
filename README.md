@@ -407,4 +407,9 @@ def __str__(self):
 ## Review Model
 [`./reviews/models.py`](./reviews/models.py)  
 [`./reviews/admin.py`](./reviews/admin.py)  
+  
+## Reservations Model  
+[`./reservations/models.py`](./reservations/models.py)  
+[`./reservations/admin.py`](./reservations/admin.py)
+
 </details>
