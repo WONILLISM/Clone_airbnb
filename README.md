@@ -408,8 +408,13 @@ def __str__(self):
 [`./reviews/models.py`](./reviews/models.py)  
 [`./reviews/admin.py`](./reviews/admin.py)  
   
-## Reservations Model  
+## Reservation Model  
 [`./reservations/models.py`](./reservations/models.py)  
 [`./reservations/admin.py`](./reservations/admin.py)
+
+## List Model
+
+[`./lists/models.py`](./lists/models.py)  
+[`./lists/admin.py`](./lists/admin.py)
 
 </details>
