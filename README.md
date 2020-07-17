@@ -463,4 +463,15 @@ def count_amenities(self, obj):
 
 [Django queryset api reference](https://docs.djangoproject.com/en/3.0/ref/models/querysets/)
 
+### practicing the Django ORM
+
+`{model_name}_set`은 foreign key의 대상이 element를 얻어내는 방법이다.
+
+`{model_name}_set`이 이름을 바꿀수도 있는데 foreign key가 작성된 모델을 선언할 때, `related_name=""`을 이용하면 된다.
+
+모델을 변경하였으므로
+
+`python manage.py makemigrations`  
+`python manage.py migrate`
+
 </details>
