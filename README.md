@@ -406,7 +406,7 @@ def __str__(self):
   
 ## Review Model
 
-[code](./commit/a30e004bde2d8e4094e95eadc57fa3132e7662a9)
+[code](../commit/a30e004bde2d8e4094e95eadc57fa3132e7662a9)
 
 [`./reviews/models.py`](./reviews/models.py)  
 [`./reviews/admin.py`](./reviews/admin.py)
