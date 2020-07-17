@@ -406,22 +406,28 @@ def __str__(self):
   
 ## Review Model
 
-[code](../commit/a30e004bde2d8e4094e95eadc57fa3132e7662a9)
+[commit](https://github.com/WONILLISM/Clone_airbnb/commit/a30e004bde2d8e4094e95eadc57fa3132e7662a9)
 
 [`./reviews/models.py`](./reviews/models.py)  
 [`./reviews/admin.py`](./reviews/admin.py)
 
 ## Reservation Model
 
+[commit](https://github.com/WONILLISM/Clone_airbnb/commit/ee8a8d0c31fcaeb2c5822b76f87763a60f477b44)
+
 [`./reservations/models.py`](./reservations/models.py)  
 [`./reservations/admin.py`](./reservations/admin.py)
 
 ## List Model
 
+[commit](https://github.com/WONILLISM/Clone_airbnb/commit/889831e97a9f36ae0f4c93cd84e6c5cb31cd80e0)
+
 [`./lists/models.py`](./lists/models.py)  
 [`./lists/admin.py`](./lists/admin.py)
 
 ## Conversation Model
+
+[commit](https://github.com/WONILLISM/Clone_airbnb/commit/9c29087b08fa1994861cf7d4d8bf8485ad44ce94)
 
 [`./conversations/models.py`](./conversations/models.py)  
 [`./conversations/admin.py`](./conversations/admin.py)
