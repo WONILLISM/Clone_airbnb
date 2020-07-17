@@ -439,4 +439,8 @@ def __str__(self):
 <details>
 <summary></summary>
 
+`fiter_horizontal`는 many to many 관계에서 작동한다.
+
+`"classes":("collapse",),`은 `fieldsets`의 항목들을 접었다 폈다 할 수 있다.
+
 </details>
