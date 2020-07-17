@@ -404,13 +404,15 @@ def __str__(self):
 <details>
 <summary></summary>  
   
-## Review Model  
-  
+## Review Model
+
+[code](./commit/a30e004bde2d8e4094e95eadc57fa3132e7662a9)
+
 [`./reviews/models.py`](./reviews/models.py)  
-[`./reviews/admin.py`](./reviews/admin.py)  
-  
-## Reservation Model  
-  
+[`./reviews/admin.py`](./reviews/admin.py)
+
+## Reservation Model
+
 [`./reservations/models.py`](./reservations/models.py)  
 [`./reservations/admin.py`](./reservations/admin.py)
 
@@ -423,5 +425,12 @@ def __str__(self):
 
 [`./conversations/models.py`](./conversations/models.py)  
 [`./conversations/admin.py`](./conversations/admin.py)
+
+</details>
+  
+# 6. ROOM ADMIN
+
+<details>
+<summary></summary>
 
 </details>
