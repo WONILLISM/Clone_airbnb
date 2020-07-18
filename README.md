@@ -474,4 +474,6 @@ def count_amenities(self, obj):
 `python manage.py makemigrations`  
 `python manage.py migrate`
 
+[commit](https://github.com/WONILLISM/Clone_airbnb/commit/835334d9ab16c436495329df7b2b8a17be2b19ea)
+
 </details>
