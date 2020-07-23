@@ -1,3 +1,7 @@
+# in project
+uploads/
+
+
 .vscode/
 
 # Byte-compiled / optimized / DLL files
@@ -137,4 +141,5 @@ dmypy.json
 .pytype/
 
 # Cython debug symbols
-cython_debug/
+cython_debug/  
+
