@@ -493,4 +493,12 @@ def count_amenities(self, obj):
 
 [commit](https://github.com/WONILLISM/Clone_airbnb/commit/22ba1b8bb2409382a897f7127e476fe70971906a)
 
+### Configuring User Uploads
+
+Media_Root
+
+- 업로드한 파일이 저장되는 장소를 지정
+- 상대경로가 아닌 절대 경로를 지정해주아야 한다.
+- `MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")`
+
 </details>
