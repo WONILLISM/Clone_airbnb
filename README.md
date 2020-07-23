@@ -477,3 +477,18 @@ def count_amenities(self, obj):
 [commit](https://github.com/WONILLISM/Clone_airbnb/commit/835334d9ab16c436495329df7b2b8a17be2b19ea)
 
 </details>
+  
+# 7. Models and Querysets
+
+<details>
+<summary></summary>  
+  
+### admin 패널이 아닌 프론트에서도 review를 포함하는 방법  
+    
+함수를 만드는 것처럼 object와 연관 있는 무언가를 model안에 만든다.  
+  
+[commit](https://github.com/WONILLISM/Clone_airbnb/commit/3ae6f3ebeeb6b45d1f51198cad19ad5fd99fd0b7)
+
+### Reservation Admin
+
+</details>
