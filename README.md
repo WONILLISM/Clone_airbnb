@@ -501,4 +501,10 @@ Media_Root
 - 상대경로가 아닌 절대 경로를 지정해주아야 한다.
 - `MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")`
 
+### Photo Admin
+
+html 코드를 반환한다면 그 코드는 장고의 보안 때문에 실행되지않고 그냥 텍스트로 남게 된다.  
+이를 해결하기 위해 아래를 추가해주자.  
+`from django.utils.html import mark_safe`
+
 </details>
