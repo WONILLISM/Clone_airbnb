@@ -478,7 +478,7 @@ def count_amenities(self, obj):
 
 </details>
   
-# 7. Models and Querysets
+# 8. More Admins
 
 <details>
 <summary></summary>  
@@ -506,5 +506,7 @@ Media_Root
 html 코드를 반환한다면 그 코드는 장고의 보안 때문에 실행되지않고 그냥 텍스트로 남게 된다.  
 이를 해결하기 위해 아래를 추가해주자.  
 `from django.utils.html import mark_safe`
+
+[commit](https://github.com/WONILLISM/Clone_airbnb/commit/c8771394d493bedd1001af69ce2af0264c7b5efa)
 
 </details>
