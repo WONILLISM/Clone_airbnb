@@ -5,6 +5,28 @@
 
 ## 2021.07.30
 
+# m1 맥 brew 설치  
+  
+```
+# We'll be installing Homebrew in the /opt directory.
+ cd /opt
+
+ # Create a directory for Homebrew. This requires root permissions.
+ sudo mkdir homebrew
+
+ # Make us the owner of the directory so that we no longer require root permissions.
+ sudo chown -R $(whoami) /opt/homebrew
+
+ # Download and unzip Homebrew. This command can be found at https://docs.brew.sh/Installation.
+ curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+
+ # Add the Homebrew bin directory to the PATH. If you don't use zsh, you'll need to do this yourself.
+ echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
+```  
+  
++ 터미널 재실행
++ `brew update`
+
 # python 버전 관리
 python은 2.x버전과 3.x버전이 많이다르고, 요즘은 3.x버전을 많이 사용하지만 3.x버전들끼리도 조금씩 차이가 있다.
 이를 해결하기 위한 방법으로 virtureenv라는 것이 있는데, 각 프로젝트마다 쓰일 가상환경을 생성하여 그 프로젝트에 해당되는 python 버전을 활성화 한 후에 실행시킨다.
@@ -36,36 +58,14 @@ pyenv version
 
 **pyenv로 설치된 파이썬 버전 목록**
 pyenv versions
-
-# virtualenv란?
-로컬에는 단 하나의 파이썬을 설치할 수 있다.
-예를들어 A에서는 3.5.x버전을 사용하고 B에서는 3.6.x버전 사용이 불가능하다.
-이 문제를 해결하기 위해 virtualenv를 사용한다.
-
-**가상환경 생성**
-pyenv virtualenv [python-versions] [virtualenv-name]
-
-**가상환경 확인**
-pyenv virtualenvs
-
-**가상환경 사용**
-pyenv shell [virtualenv-name]
-
-**가상환경 삭제**
-pyenv uninstall [virtualenv-name]
-
-**가상환경 설정/해제**
-pyenv activate
-pyenv deactivate
-
-
-
-1. pipenv 설치.
-2. pipenv shell을 이용해서 가상환경을 켠다.
-3. pipenv install Django==2.2.5
-4. django-admin으로 잘 설치되었는지 확인.
+  
+1. python version 3.7.11사용  
+2. pipenv 설치.
+3. pipenv shell을 이용해서 가상환경을 켠다.
+4. pipenv install Django==2.2.5
+5. django-admin으로 잘 설치되었는지 확인.
    1. 가상환경이 실행되지 않은 쉘에서는 장고를 찾을 수 없다.
-5. exit로 가상환경을 종료할 수 있다.
+6. exit로 가상환경을 종료할 수 있다.
 
 ### Creating a Django Project
 장고 프로젝트 만들기
