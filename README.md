@@ -34,6 +34,8 @@ python은 2.x버전과 3.x버전이 많이다르고, 요즘은 3.x버전을 많�
 # pyenv란?
 pyenv란 여러 버전의 python을 쉽게 바꿔서 쓸 수 있게 해주는 도구이다.
 pyenv를 사용함으로써 python 버전에 대한 의존성을 해결할 수 있다.
+  
+`brew install pyenv`  
 
 **설치 가능한 버전 리스트**
 pyenv install -list
