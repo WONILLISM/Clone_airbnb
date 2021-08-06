@@ -129,7 +129,26 @@ SECRET_KEY = get_secret("SECRET_KEY")
 
 python manage.py runserver -> 서버 구동
 python mamage.py createsuperuser -> 관리자 계정 만들기
-python manage.py migrate -> 데이터베이스 업데이트
+python manage.py migrate -> 데이터베이스 업데이트  
+  
+### INSTALLED_APPS
++ django와 함께 딸려오는 기본 앱들은 다음과 같다.
+  + django.contrib.admin
+    + django의 가장 강력한 부분 중 하나인 자동 관리 인터페이스이다.
+    + 모델에서 메타데이터를 읽어 신뢰할 수 있는 사용자가 사이트의 콘텐츠를 관리할 수 있는 빠른 모델 중심 인터페이스를 제공한다.
+    + `(연결한 url/admin/)`을 통해서 사용할 수 있다.
+  + django.contrib.auth
+    + 사용자 인증 시스템을 지원한다.
+    + 사용자 계정, 그룹, 권한과 쿠키 기반의 사용자, 세션을 다룬다.
+  + django.contrib.contenttypes
+    + django 기반 프로젝트에 설치된 모든 모델을 추적할 수 있는 contenttypes 앱이 포함되어 있어 모델 작업을 위한 고급, 일반 인터페이스를 제공한다.
+  + django.contrib.sessions
+    + 세션 프레임워크를 사용하면 사이트 방문자별로 임의의 데이터를 저장하고 검색할 수 있다. 서버에 데이터를 저장하고 쿠키의 송수신을 추상화한다.
+  + django.contrib.messages
+    + 익명 및 인증된 사용자 모두에게 쿠키 및 세션 기반 메시징을 완벽하게 지원한다.
+  + django.contrib.staticfiles
+    + 정적파일을 관리하는 프레임워크
++ 
 
 django-admin startapp 앱이름
   
@@ -141,7 +160,31 @@ django-admin startapp 앱이름
   + makemigrations 또는 기본적으로 생성된 migrations들을 실행시켜주고 자동으로 데이터베이스 스키마를 관리해준다.
 + createsuperuser
   + 모든 권한을 가지는 superuser를 생성한다.
-**파일 이름은 절대로 변경해서는 안된다.**
+  
++ django-admin startapp `app 이름`
+  + conversations
+  + lists
+  + reservations
+  + reviews
+  + rooms
+  + users
+    + django에는 기본적으로 user가 존재하지만, 이 user는 데이터베이스에 접근 할 수 있는 user를 뜻한다. 하지만 우리가 필요한 user는 홈페이지를 사용할 고객이기 때문에 데이터베이스에 접근하지 못하는 새로운 users를 생성해서 사용한다.
+    + app을 생성했을때 만들어지는 기본적인 파일 및 폴더들은 django에게 필요한 것이기 때문에 삭제하거나 이름을 바꾸어서는 안된다.
+  
+### 생성한 app안의 파일들
++ `__init__.py`
++ `admin.py`
+  + app의 내용들을 admin 패널에 보여주기위한 파일
++ `veiw.py`
+  + 페이지에서 보여질 부분들을 작성하는 파일 -> html렌더
++ `urls.py`
+  + url들을 관리하는 파일
+  + config/urls.py 에 모든 앱들의 url을 관리하지않고 각 앱에 있는 urls.py만들어서 연동시켜준다.
++ `apps.py`
+  + 앱의 구성을 관리하는 파일
++ `models.py`
+  + 앱의 모델을 관리하는 파일(데이터베이스) -> 앱의 데이터 변경
++ `tests.py`
 
 ## 2021.08.03
 ## 3. USER APP
