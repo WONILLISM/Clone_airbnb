@@ -88,6 +88,44 @@ $ django-admin startproject config
 + rename config -> Aconfig
 + 안에있는 config폴더를 꺼낸 후 Aconfig를 삭제
 
++ 이 때 settings.py에 있는 secret_key를 그냥 올리게 되면 깃에서 보안 경고 메일이 온다.
++ 이를 처리하기 위한 방법
+  + secrets.json 파일 생성
+```json
+{
+  "SECRET_KEY": "(1djli9wygoor+6^5g36bcn^ca+!+@8uc-=bw-3bk)z2pwrdq8"
+}
+```
++ gitignore에 secrets.json 추가
++ setting.py 아래와 같이 수정
+```python3
+import os, json
+from django.core.exceptions import ImproperlyConfigured
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+secret_file = os.path.join(BASE_DIR, "secrets.json")
+
+with open(secret_file) as f:
+    secrets = json.loads(f.read())
+
+def get_secret(setting, secrets=secrets):
+    try:
+        return secrets(setting)
+    execept KeyError:
+        error_msg = "Set the {} environment variable".format(setting)
+        raise ImproperlyConfigured(error_msg)
+
+SECRET_KEY = get_secret("SECRET_KEY")
+
+...
+```
 
 python manage.py runserver -> 서버 구동
 python mamage.py createsuperuser -> 관리자 계정 만들기
