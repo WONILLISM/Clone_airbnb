@@ -132,7 +132,15 @@ python mamage.py createsuperuser -> 관리자 계정 만들기
 python manage.py migrate -> 데이터베이스 업데이트
 
 django-admin startapp 앱이름
-
+  
++ django 모델
+  + django에서 model은 데이터 서비스를 제공하는 Layer이다. django의 model은 각 django app안에 기본적으로 생성되는 models.py 모듈 안에 정의하게 된다. models.py 모듈 안에 하나 이상의 모델 클래스를 정의할 수 있으며, 하나의 모델 클래스는 데이터베이스에서 하나의 테이블에 해당된다.
++ makemigrations 
+  + 생성 / 수정된 모델들의 변경사항을 migrations로 저장하고자 Django에게 알려준다.
++ migrate
+  + makemigrations 또는 기본적으로 생성된 migrations들을 실행시켜주고 자동으로 데이터베이스 스키마를 관리해준다.
++ createsuperuser
+  + 모든 권한을 가지는 superuser를 생성한다.
 **파일 이름은 절대로 변경해서는 안된다.**
 
 ## 2021.08.03
