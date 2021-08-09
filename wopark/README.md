@@ -319,12 +319,74 @@ django는 기본적으로 authentication을 내장하고 있고, UserModel을 �
 + pillow를 설치해야 imagefield를 사용할 수 있다
 + m1 pillow 설치 에러 이슈
   + 파이썬 3.9 버전부터 pillow를 지원해서 파이썬 버전을 3.9로 바꿈
-+ 데코레이터란?
-+ list_display()
-+ list_filter()
-+ fieldset
-+ 장고 ORM 이란?
-+ admin.py에서 admin 패널을 수정 확장 할 수 있다.
+
+### Decorator(데코레이터)
+https://m.blog.naver.com/b2bhjlee/222094004738  
+https://docs.djangoproject.com/ko/1.11/_modules/django/contrib/admin/  
+데코레이터는 사용자가 객체의 구조를 수정하지 않고, 기존 객체에 새로운 함수 기능을 추가할 수 있도록하는 Python의 디자인 패턴이다.  
+  
+데코레이터는 일반적으로 데코레이트하려는 함수의 정의 이전에 호출된다.  
+  
+함수는 인수로 전달되고, 함수에서 return 되고, 수정되고, 변수에 할당되는 것과 같은 작업을 지원한다.
+  
+우리는 admin.py를 통해서 관리자 페이지에 모델을 추가할때 `from django.contrib import admin`로 패키지를 통해서 추가한다.  
+`django/contrib/admin/decorators.py` 코드를 확인해보자.  
+  
+```python3
+def register(*models, site=None):
+    """
+    Register the given model(s) classes and wrapped ModelAdmin class with
+    admin site:
+
+    @register(Author)
+    class AuthorAdmin(admin.ModelAdmin):
+        pass
+
+    The `site` kwarg is an admin site to use instead of the default admin site.
+    """
+    from django.contrib.admin import ModelAdmin
+    from django.contrib.admin.sites import site as default_site, AdminSite
+
+    def _model_admin_wrapper(admin_class):
+        if not models:
+            raise ValueError('At least one model must be passed to register.')
+
+        admin_site = site or default_site
+
+        if not isinstance(admin_site, AdminSite):
+            raise ValueError('site must subclass AdminSite')
+
+        if not issubclass(admin_class, ModelAdmin):
+            raise ValueError('Wrapped class must subclass ModelAdmin.')
+
+        admin_site.register(models, admin_class=admin_class)
+
+        return admin_class
+    return _model_admin_wrapper
+
+```
+  
+주석에 나와있는 것처럼  
+```python3
+@register(Author)
+    class AuthorAdmin(admin.ModelAdmin):
+        pass
+```
+위와 같이 adminsite에 모델을 추가할 수 있다.  
++ 만들어진 app의 `admin.py`에 `django/contrib/admin`패키지를 추가
++ 우리는 `from django.contrib import admin`으로 패키지를 추가했으므로
++ `@admin.register(모델명)` 데코레이터를 통해서 모델을 admin site에 추가한다.
++ 이를 통해 admin.py에서 admin 패널을 수정 확장 할 수 있다.
+
+### 장고 ORM 이란?
+Object-Relational Mapping의 약자
++ 객체와 관계형 데이터베이스의 데이터를 매핑 해주는 것이다.
++ 객체 간의 관계를 바탕으로 SQL을 자동으로 생성해서 sql쿼리문 없이도 데이터베이스의 데이터들을 다룰 수 있다.
++ 개발자가 사소하게 신경쓰지 않아도 자동으로 처리해주어 빠른 개발이 가능하고, 생산성이 좋아진다.
++ 선언문, 할당, 종료와 같은 코드가 줄어들고, 객체에 대한 코드를 별도로 작성하기 때문에 코드 가독성이 좋아진다.
++ 코드의 재사용이 용이하여 유지보수도 편리하다.
++ 규모가 큰 프로젝트나 복잡한 프로젝트의 경우 sql을 이용하여 데이터베이스를 관리하는 것이 보통 더 좋다.
++ 정확한 원리를 이해하고 프로젝트를 진행해야하지만, 그렇지 않아도 사용 가능하므로 대처능력이 떨어질 가능성이 있다.
 
 
 ## 2021.08.08
