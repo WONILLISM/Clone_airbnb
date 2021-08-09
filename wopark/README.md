@@ -47,7 +47,7 @@ pyenv install [python-version]
 pyenv uninstall [python-version]
 
 **파이썬 버전 사용(일시적)**
-pyenv shell [python-version]
+pyenv local [python-version]
 
 **파이썬 버전 사용(전역적)**
 pyenv global [python-version]
@@ -127,8 +127,8 @@ SECRET_KEY = get_secret("SECRET_KEY")
 ...
 ```
 
-python manage.py runserver -> 서버 구동
-python mamage.py createsuperuser -> 관리자 계정 만들기
+python manage.py runserver -> 서버 구동  
+python mamage.py createsuperuser -> 관리자 계정 만들기  
 python manage.py migrate -> 데이터베이스 업데이트  
   
 ### INSTALLED_APPS
@@ -306,12 +306,19 @@ https://himanmengit.github.io/django/2018/02/05/DjangoModels-04-ManyToMany.html
 
 
 + USER 확장하기
-+ config/settings.py 에 AUTH_USER_MODEL 추가 (costomizing auth 알아보기)
-+ 장고에 있는 기본 user를 상속받아서 모든 앱에 적용시킬 예정
-+ Abstract user 알아보기
-+ dependency 에러?
++ config/settings.py에 있는 INSTALLED_APPS를 좀 세분화 하기 위해 장고에 기본으로 설치된 앱들을 DJANGO_APPS로 옮기고 PROJECT_APPS에 앞으로 설치할 앱들을 적고 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS로 합쳐준다.
++ config/settings.py 에 AUTH_USER_MODEL='users.User' 추가 
+
+### Customizing authentication in Django
+https://docs.djangoproject.com/en/3.2/topics/auth/customizing/  
+django는 기본적으로 authentication을 내장하고 있고, UserModel을 가지고있다.  
+제공되는 UserModel이 항상 적절하지 않을 수 있기 때문에, 커스텀 UserModel을 대체할 수 있다.  
++ `AUTH_USER_MODEL = 'myapp.MyUser'`를 config/setting.py에 추가
++ 커스텀할 유저 앱의 `models.py`에 `from django.contrib.auth.models import AbstractUser`를 추가한다.
+
 + pillow를 설치해야 imagefield를 사용할 수 있다
 + m1 pillow 설치 에러 이슈
+  + 파이썬 3.9 버전부터 pillow를 지원해서 파이썬 버전을 3.9로 바꿈
 + 데코레이터란?
 + list_display()
 + list_filter()
@@ -320,13 +327,16 @@ https://himanmengit.github.io/django/2018/02/05/DjangoModels-04-ManyToMany.html
 + admin.py에서 admin 패널을 수정 확장 할 수 있다.
 
 
-## 2021.08.04
+## 2021.08.08
 ## 4. ROOMS APP
 + 만든날짜 수정날짜가 여러군데에서 나올 것이다.
   + 이를 위해 core라는 앱을 만듬.
   + django-admin startapp core
   + core 모델은 디비에 추가하지 않는다.
   + abstract=true?
+  + pipenv install django-countries (모든 국가 패키지)
+  + from django_countries.fields import CountryField 모델에 추가
+  + setting.py에 인스톨 앱 추가
 + import 순서
   1. 파이썬 관련
   2. 장고와 관련
@@ -340,3 +350,7 @@ https://himanmengit.github.io/django/2018/02/05/DjangoModels-04-ManyToMany.html
   + django foreign key?
 + verbose name?
 + meta class?
+
+
+## 2021.08.08
+## 4. ROOMS APP
