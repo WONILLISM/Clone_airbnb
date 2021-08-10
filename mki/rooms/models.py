@@ -80,7 +80,9 @@ class Room(core_models.TimeStampModel):
     check_in = models.TimeField(null=True)
     check_out = models.TimeField(null=True)
     instant_book = models.BooleanField(default=False)
-    host = models.ForeignKey("users.User", on_delete=models.CASCADE, default="")
+    host = models.ForeignKey(
+        "users.User", related_name="rooms", on_delete=models.CASCADE, default=""
+    )
     room_type = models.ForeignKey("RoomType", on_delete=models.SET_NULL, null=True)
     amenities = models.ManyToManyField("Amenity", blank=True)
     facilities = models.ManyToManyField("Facility", blank=True)
