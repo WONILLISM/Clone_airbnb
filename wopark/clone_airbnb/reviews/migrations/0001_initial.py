@@ -12,12 +12,18 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='List',
+            name='Review',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
-                ('name', models.CharField(max_length=80)),
+                ('review', models.TextField()),
+                ('accuracy', models.IntegerField()),
+                ('communication', models.IntegerField()),
+                ('cleanliness', models.IntegerField()),
+                ('location', models.IntegerField()),
+                ('check_in', models.IntegerField()),
+                ('value', models.IntegerField()),
             ],
             options={
                 'abstract': False,

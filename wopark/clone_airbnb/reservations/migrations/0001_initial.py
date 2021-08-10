@@ -12,12 +12,14 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='List',
+            name='Reservation',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
-                ('name', models.CharField(max_length=80)),
+                ('check_in', models.DateField()),
+                ('check_out', models.DateField()),
+                ('status', models.CharField(choices=[('pending', 'pending'), ('confirmed', 'confirmed'), ('canceled', 'canceled')], default='pending', max_length=12)),
             ],
             options={
                 'abstract': False,
