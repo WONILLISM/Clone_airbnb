@@ -414,5 +414,21 @@ Object-Relational Mapping의 약자
 + meta class?
 
 
-## 2021.08.08
-## 4. ROOMS APP
+## 2021.08.09
+## 5. ALL OTHER APPS
+
+
+## 2021.08.10
+## 6. ROOM ADMIN
+
++ admin filter 알아보기
++ icontains
++ fieldsets 커스터마이징
++ ordering(정렬)
+
+## 7. MODELS AND QUERYSETS
+
++ querysets
++ python manage.py shell
++ related_name
++ 

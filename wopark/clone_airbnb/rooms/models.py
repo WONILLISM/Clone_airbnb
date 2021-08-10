@@ -66,7 +66,7 @@ class Room(core_models.TimeStapedModel):
     """ Room Model Definition """
 
     name = models.CharField(max_length=140)
-    discriptions = models.TextField()
+    description = models.TextField()
     country = CountryField()
     city = models.CharField(max_length=80)
     price = models.IntegerField()
@@ -78,7 +78,7 @@ class Room(core_models.TimeStapedModel):
     check_in = models.TimeField()
     check_out = models.TimeField()
     instant_book = models.BooleanField(default=False)
-    host = models.ForeignKey("users.User", on_delete=models.CASCADE)
+    host = models.ForeignKey("users.User", related_name="rooms", on_delete=models.CASCADE)
     room_type = models.ForeignKey("RoomType", on_delete=models.SET_NULL, null=True)
     amenities = models.ManyToManyField("Amenity", blank=True)
     facilities = models.ManyToManyField("Facility", blank=True)
