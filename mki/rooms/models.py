@@ -1,7 +1,9 @@
 from django.db import models
 from django_countries.fields import CountryField
 from core import models as core_models
-from users import models as user_models
+
+# from users import models as user_models
+# from reviews import models as review_models
 
 
 class AbstractItem(core_models.TimeStampModel):
@@ -57,7 +59,7 @@ class Photo(core_models.TimeStampModel):
 
     caption = models.CharField(max_length=80)
     file = models.ImageField()
-    room = models.ForeignKey("Room", on_delete=models.CASCADE)
+    room = models.ForeignKey("Room", related_name="photos", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.caption
@@ -83,10 +85,19 @@ class Room(core_models.TimeStampModel):
     host = models.ForeignKey(
         "users.User", related_name="rooms", on_delete=models.CASCADE, default=""
     )
-    room_type = models.ForeignKey("RoomType", on_delete=models.SET_NULL, null=True)
-    amenities = models.ManyToManyField("Amenity", blank=True)
-    facilities = models.ManyToManyField("Facility", blank=True)
-    house_rules = models.ManyToManyField("HouseRule", blank=True)
+    room_type = models.ForeignKey(
+        "RoomType", related_name="room", on_delete=models.SET_NULL, null=True
+    )
+    amenities = models.ManyToManyField("Amenity", related_name="rooms", blank=True)
+    facilities = models.ManyToManyField("Facility", related_name="rooms", blank=True)
+    house_rules = models.ManyToManyField("HouseRule", related_name="rooms", blank=True)
 
     def __str__(self):
         return self.name
+
+    def total_rating(self):
+        all_reviews = self.reviews.all()
+        all_ratings = []
+        for review in all_reviews:
+            all_ratings += review.rating_average()
+        return all_ratings / len(all_reviews)
