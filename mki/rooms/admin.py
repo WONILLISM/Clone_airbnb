@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import mark_safe
 from . import models
 
 
@@ -12,7 +13,10 @@ class ItemAdmin(admin.ModelAdmin):
     def used_by(self, obj):
         return obj.rooms.count()
 
-    pass
+
+class PhotoInline(admin.TabularInline):
+
+    model = models.Photo
 
 
 @admin.register(models.Room)
@@ -20,10 +24,12 @@ class RoomAdmin(admin.ModelAdmin):
 
     """Item Admin Definition"""
 
+    inlines = (PhotoInline,)
+
     fieldsets = (
         (
             "Basic Info",
-            {"fields": ("name", "description", "country", "address", "price")},
+            {"fields": ("name", "description", "country", "city", "address", "price")},
         ),
         (
             "Times",
@@ -73,6 +79,11 @@ class RoomAdmin(admin.ModelAdmin):
         "house_rules",
     )
 
+    raw_id_fields = (
+        "host",
+        "amenities",
+    )
+
     # icontains
     # startswith
     search_fields = [
@@ -101,7 +112,12 @@ class PhotoAdmin(admin.ModelAdmin):
 
     """Photo Admin Definition"""
 
-    pass
+    list_display = ("__str__", "get_thumbnail")
+
+    def get_thumbnail(self, obj):
+        return mark_safe(f'<img src="{obj.file.url}" />')
+
+    get_thumbnail.short_description = "Thumbnail"
 
 
 # Making queries
