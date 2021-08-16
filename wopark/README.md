@@ -428,7 +428,42 @@ Object-Relational Mapping의 약자
 
 ## 7. MODELS AND QUERYSETS
 
-+ querysets
++ querysets 사용방법
 + python manage.py shell
 + related_name
-+ 
+
+
+## 2021.08.11
+## 8.
+
++ list_display 확장 방법
++ 우리가 생성한 함수로는 필터를 만들 수 없나?
+  
+## 2021.08.12
++ 사진 저장 장소 변경하기
++ MEDIA_ROOT = os.path.join(BASE_DIR, "uploads") setting.py에 추가
++ MEDIA_URL = "/media/"를 통해 장고에게 사진들이 어디있는지 알려준다.
++ settings.py에 DEBUG = true가 되어있으면 개발모드이다.
++ static 파일 헬퍼
++ django admin 페이지에서 스크립트를 작성할 수 없다.
++ raw_id_fields
++ InlineModelAdmin -> admin 안에 또 다른 admin 넣기
++ TabularInline
++ StackedInline
++ save(), delete() 메소드
++ save_model()
+
+
+## 2021.08.16
+## 9. 
++ 장고시드를 이용해 더미 데이터 만들기
++ custom django command
++ 원하는 앱에 management 디렉토리 생성
++ management 디렉토리에 `__init__.py` 파일 생성
++ command 디렉토리 생성
++ command 디렉토리 안에 `__init__.py` 파일 생성
++ 명령어로 만들 파일 생성
++ django_seed? 
++ DB가 클 경우에는 .all() 쓰지말것
++ 시드 명령어 유저 만들기
++ python manage.py seed_users --number 50    
