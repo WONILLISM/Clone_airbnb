@@ -454,7 +454,7 @@ Object-Relational Mapping의 약자
 + save_model()
 
 
-## 2021.08.16
+## 2021.08.16 ~ 17
 ## 9. 
 + 장고시드를 이용해 더미 데이터 만들기
 + custom django command
@@ -467,3 +467,9 @@ Object-Relational Mapping의 약자
 + DB가 클 경우에는 .all() 쓰지말것
 + 시드 명령어 유저 만들기
 + python manage.py seed_users --number 50    
+
+## 2021.08.18
++ view 작성하기
++ template?
++ import render?
++ {% block %}
