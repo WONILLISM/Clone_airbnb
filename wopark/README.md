@@ -469,7 +469,25 @@ Object-Relational Mapping의 약자
 + python manage.py seed_users --number 50    
 
 ## 2021.08.18
+## 10
 + view 작성하기
 + template?
 + import render?
 + {% block %}
+
+## 2021.08.20
+## 11
++ pagination하기
++ request.Get != request.Get.get()
++ template tag
++ view filter
++ paginator
++ orphans?
+
+
+## 2021.08.22
++ try execpt
++ ccbv.co.uk
++ 추상화를 이용하여 뷰를 구성하는 방법, 직접 프로그래밍으로 뷰를 구성하는 방법
+  + CBV vs FBV
++ 
