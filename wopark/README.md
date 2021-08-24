@@ -490,4 +490,8 @@ Object-Relational Mapping의 약자
 + ccbv.co.uk
 + 추상화를 이용하여 뷰를 구성하는 방법, 직접 프로그래밍으로 뷰를 구성하는 방법
   + CBV vs FBV
+
+## 2021.08.23 ~ 24
++ feild lookups
++ Forms API
 + 
