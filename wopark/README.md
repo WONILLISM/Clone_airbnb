@@ -494,4 +494,12 @@ Object-Relational Mapping의 약자
 ## 2021.08.23 ~ 24
 + feild lookups
 + Forms API
-+ 
+
+
+## 2021.08.26
++ CSRF?
++ {% csrf_token %}
++ clean method
+  + clean_email
+  + clean_pasword
+  + cleaned_data : 초기화 됐는지 확인
