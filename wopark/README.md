@@ -503,3 +503,6 @@ Object-Relational Mapping의 약자
   + clean_email
   + clean_pasword
   + cleaned_data : 초기화 됐는지 확인
+
+## 2021.08.27
++ Model Form
