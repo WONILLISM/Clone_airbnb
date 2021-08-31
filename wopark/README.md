@@ -506,3 +506,10 @@ Object-Relational Mapping의 약자
 
 ## 2021.08.27
 + Model Form
+
+## 2021.08.30
++ tailwindCSS 설치
+
+## 2021.08.31
+## 20.0
++
